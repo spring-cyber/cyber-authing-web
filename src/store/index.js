@@ -1,9 +1,7 @@
-import user from './modules/user.js';
-import dict from './modules/dict.js';
-import config from './modules/config.js';
-import maintain from './modules/maintain.js';
+import { store } from 'cyber-web-ui';
 
-export const userStore = user;
-export const dictStore = dict;
-export const configStore = config;
-export const maintainStore = maintain;
+export const userStore = store.userStore;
+export const dictStore = store.dictStore;
+export const configStore = store.configStore;
+export const maintainStore = store.maintainStore;
+export const permissionStore = store.permissionStore;

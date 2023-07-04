@@ -1,16 +1,11 @@
 <template>
-  <config-provider>
-    <router-view v-if="state.independent && state.isRouterAlive"></router-view>
-    <Layouts v-else>
-      <router-view v-if="state.isRouterAlive"></router-view>
-    </Layouts>
-  </config-provider>
+  <c-config-provider>
+    <router-view v-if="state.isRouterAlive"></router-view>
+  </c-config-provider>
 </template>
 
 <script setup>
 import { maintainStore } from '@/store';
-import Layouts from "@/components/layouts/index.vue";
-import ConfigProvider from "@/components/configProvider.vue";
 
 const $useRoute = useRoute();
 const state = reactive({

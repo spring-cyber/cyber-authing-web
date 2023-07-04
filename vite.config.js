@@ -5,7 +5,8 @@ import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite';
 import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers';
 import WindiCSS from 'vite-plugin-windicss';
-import theme from './src/assets/style/theme.js'
+import theme from './src/assets/style/theme.js';
+import viteCompression from 'vite-plugin-compression';
 
 import path from 'path'
 export default defineConfig(({ command, mode }) => {
@@ -38,6 +39,11 @@ export default defineConfig(({ command, mode }) => {
         imports: ["vue", "vue-router"],
       }),
       WindiCSS(),
+      viteCompression({
+        threshold: 500000, // 启用压缩的文件大小限制，单位是字节，默认为0
+        deleteOriginFile: false, // 压缩后删除原文件
+        algorithm: 'gzip', // 压缩算法
+      }),
     ],
     base: "./", // ./ 本地双击可打开, 默认 /
     resolve: {
@@ -46,14 +52,14 @@ export default defineConfig(({ command, mode }) => {
       },
     },
     server: {
-      host: "0.0.0.0",
+      host: true,
       open: true,
-      port: 8888,
+      port: 8002,
       strictPort: false,
       cors: true,
       proxy: {
         "/gateway": {
-          target: "http://192.168.0.226:8080",
+          target: "http://192.168.0.188:8080",
           changeOrigin: true, 
           rewrite: (path) => {
             return path.replace(/\/gateway/, "");
@@ -67,4 +73,4 @@ export default defineConfig(({ command, mode }) => {
       assetsDir: 'assets',
     },
   };
-})
+});

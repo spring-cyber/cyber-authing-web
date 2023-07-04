@@ -33,7 +33,7 @@ export default defineComponent({
         if(props.resize) {
           chartState.resizeSymbol = Symbol('g-chart');
           // 添加到echarts公共resize状态管理
-          $maintainStore.resizeState[chartState.resizeSymbol] = methods.resize;
+          $maintainStore.setResize(chartState.resizeSymbol, methods.resize)
         }
       },
       // 更新图表
@@ -51,9 +51,7 @@ export default defineComponent({
       },
       // 销毁
       dispose() {
-        if(chartState.resizeSymbol) {
-          delete $maintainStore.resizeState[chartState.resizeSymbol];
-        }
+        if(chartState.resizeSymbol) $maintainStore.removeResize(chartState.resizeSymbol);
         instance?.dispose?.();
         instance = undefined;
       }

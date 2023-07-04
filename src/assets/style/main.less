@@ -1,3 +1,6 @@
+@import 'ant-design-vue/dist/antd.less';
+@import 'cyber-web-ui/dist/cyber.less';
+
 html,
 body {
   min-width: 1360px;
@@ -20,7 +23,8 @@ body {
   line-height: 1.5;
 }
 
-div {
+div,
+ul {
   box-sizing: border-box;
   &::-webkit-scrollbar {
     // 滚动条整体部分，可以设置宽度啥的
@@ -54,90 +58,4 @@ div {
 img {
   user-select: none;
   -webkit-user-drag: none;
-}
-
-@media only screen and (min-width: 7000px) and (max-width: 10000px) {
-  html {
-    font-size: 3.8px;
-  }
-}
-@media only screen and (min-width: 6500px) and (max-width: 6999px) {
-  html {
-    font-size: 3.5px;
-  }
-}
-@media only screen and (min-width: 6000px) and (max-width: 6499px) {
-  html {
-    font-size: 3.2px;
-  }
-}
-@media only screen and (min-width: 5500px) and (max-width: 5999px) {
-  html {
-    font-size: 3px;
-  }
-}
-@media only screen and (min-width: 5000px) and (max-width: 5499px) {
-  html {
-    font-size: 2.8px;
-  }
-}
-@media only screen and (min-width: 4500px) and (max-width: 4999px) {
-  html {
-    font-size: 2.5px;
-  }
-}
-@media only screen and (min-width: 4000px) and (max-width: 4499px) {
-  html {
-    font-size: 2.2px;
-  }
-}
-@media only screen and (min-width: 3500px) and (max-width: 3999px) {
-  html {
-    font-size: 2px;
-  }
-}
-@media only screen and (min-width: 3000px) and (max-width: 3499px) {
-  html {
-    font-size: 1.8px;
-  }
-}
-@media only screen and (min-width: 2600px) and (max-width: 2999px) {
-  html {
-    font-size: 1.5px;
-  }
-}
-@media only screen and (min-width: 2134px) and (max-width: 2599px) {
-  html {
-    font-size: 1.3px;
-  }
-}
-@media only screen and (min-width: 1920px) and (max-width: 2133px) {
-  html {
-    font-size: 1px;
-  }
-}
-@media only screen and (min-width: 1751px) and (max-width: 1919px) {
-  html {
-    font-size: 0.95px;
-  }
-}
-@media only screen and (min-width: 1551px) and (max-width: 1750px) {
-  html {
-    font-size: 0.9px;
-  }
-}
-@media only screen and (min-width: 1441px) and (max-width: 1550px) {
-  html {
-    font-size: 0.85px;
-  }
-}
-@media only screen and (max-width: 1440px) {
-  html {
-    font-size: 0.8px;
-  }
-}
-@media only screen and (max-width: 1440px) {
-  html {
-    font-size: 0.8px;
-  }
 }
